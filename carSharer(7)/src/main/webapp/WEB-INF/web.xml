@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<display-name>Babble</display-name>
+
+	<servlet>
+		<servlet-name>freemarker</servlet-name>
+		<servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+
+		<!-- FreemarkerServlet settings: -->
+		<init-param>
+			<param-name>TemplatePath</param-name>
+			<param-value>WEB-INF</param-value>
+		</init-param>
+		<init-param>
+			<param-name>NoCache</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ContentType</param-name>
+			<param-value>text/html; charset=UTF-8</param-value>
+		</init-param>
+
+		<!-- FreeMarker settings: -->
+		<init-param>
+			<param-name>template_update_delay</param-name>
+			<param-value>0</param-value>
+			<!-- 0 is for development only! Use higher value otherwise. -->
+		</init-param>
+		<init-param>
+			<param-name>default_encoding</param-name>
+			<param-value>UTF-8</param-value>
+			<!-- The encoding of the template files. -->
+		</init-param>
+		<init-param>
+			<param-name>number_format</param-name>
+			<param-value>0.##########</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>freemarker</servlet-name>
+		<url-pattern>*.ftl</url-pattern>
+	</servlet-mapping>
+	
+	<!--Wir Werfen alle Unsere Servlets ab hier -->
+	
+	<servlet>
+    	<servlet-name>main_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.viewMainServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  	  	<servlet-name>main_servlet</servlet-name>
+   	 	<url-pattern>/view_Main</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+    	<servlet-name>rating_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.ratingServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  	  	<servlet-name>rating_servlet</servlet-name>
+   	 	<url-pattern>/rating</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	
+  	<servlet>
+    	<servlet-name>fahrtdetail_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.Fahrtdetailservlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  	  	<servlet-name>fahrtdetail_servlet</servlet-name>
+   	 	<url-pattern>/fahrtdetail</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+  	<servlet>
+    	<servlet-name>such_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.suchServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  	  	<servlet-name>such_servlet</servlet-name>
+   	 	<url-pattern>/view_Search</url-pattern>
+  	</servlet-mapping>
+  	
+	
+	<servlet>
+    	<servlet-name>main_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.viewMainServlet</servlet-class>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  	  	<servlet-name>main_servlet</servlet-name>
+   	 	<url-pattern>/slide</url-pattern>
+  	</servlet-mapping>
+	
+	
+	<servlet>
+    	<servlet-name>fahrters_servlet</servlet-name>
+    	<servlet-class>de.unidue.inf.is.fahrtersServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  	  	<servlet-name>fahrters_servlet</servlet-name>
+   	 	<url-pattern>/newDrive</url-pattern>
+  	</servlet-mapping>
+	<servlet>
+		<servlet-name>hello_servlet</servlet-name>
+		<servlet-class>de.unidue.inf.is.HelloServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>hello_servlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>carSharer_servlet</servlet-name>
+		<servlet-class>de.unidue.inf.is.CarSharerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>carSharer_servlet</servlet-name>
+		<url-pattern>/carSharer</url-pattern>
+	</servlet-mapping>
+
+	<!-- Prevent the visiting of MVC Views from outside the servlet container. 
+		RequestDispatcher.forward/include should and will still work. Removing this 
+		may open security holes! -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>FreeMarker MVC Views</web-resource-name>
+			<url-pattern>*.ftl</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Nobody is allowed to visit these -->
+		</auth-constraint>
+	</security-constraint>
+
+</web-app>

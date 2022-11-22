@@ -1,0 +1,34 @@
+####### Java SE Runtime und Maven Download #######
+-> https://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-developers
+
+####### Gruppennummer in der pom.xml anpassen #######
+ Zeile 25 in der pom.xml 
+ XXX mit der Gruppennummer ersetzen.
+ Beispiel: dbp001 -> XXX = 001
+
+####### Ändern der Config Parameter ####### 
+Ersetzt die Werte in settings.properties mit euren Account- und DB Daten
+
+####### Starten als Webanwendung #######
+1. Linux-Konsole öffnen
+2. In das Projektverzeichnis wechseln (z.B. cd /home/dbpXXX/block3/projekte/java/carSharer/)
+2. mvn clean jetty:run in der Konsole ausführen
+
+###### web.xml und Templates ####### 
+src/main/webapp/WEB-INF
+
+####### Freemarker Template Engine: #######
+http://freemarker.sourceforge.net/
+
+####### Weitere Infos zum "Store"-Konzept (wird dort Repository genannt): #######
+http://martinfowler.com/eaaCatalog/repository.html
+http://msdn.microsoft.com/en-us/library/ff649690.aspx
+http://devtyr.norberteder.com/post/Das-Repository-Pattern-anhand-eines-Beispiels-inkl-Tests.aspx
+
+####### Um sich von außerhalb der Uni mit der DB zu verbinden: #######
+Die Datei settings.properties überarbeiten.  Die Methode getExternalConnection() in DBUtil.java verwenden.
+
+####### Troubleshooting für externe Connections: #######
+1. db2start / db2stop auf dem remote Rechner ausführen
+2. Überprüfe, ob der Port richtig gesetzt ist. Der Port müssete 50XXX sein, wobei XXX für eure Gruppennummer steht. 
+3. Überprüfe, ob der remote Rechner auf dem Port lauscht: db2 get dbm cfg | grep SVCE
