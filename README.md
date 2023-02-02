@@ -1,9 +1,11 @@
 # CarSharing-
+
 (Datenbanken praktikum)
-Implementierung einer Web-Applikation 
-“carSharer”
+
+Implementierung einer Web-Applikation “carSharer”
+
 Platform für Mitfahrgelegenheiten
-Benutzer können. . .
-. . . Fahrten erstellen
-. . . Plätze für Fahrten reservieren
-. . . Bewertungen für Fahrten schreiben
+Benutzer können
+  1) Fahrten erstellen
+  2) Plätze für Fahrten reservieren
+  3) Bewertungen für Fahrten schreiben
