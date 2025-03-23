@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('image6.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background: #41B3A3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+nav li {
+    list-style: none;
+    font-size: 16px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #41B3A3;
+}
+
+
+.slider {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 80px; 
+}
+
+.principal {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #41B3A3;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Boxed {
+    background: #41B3A3;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+fieldset {
+    border: none;
+    padding: 20px;
+}
+
+fieldset div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button, .action-btn, .mybutton, .erstellen, .bewerten, .newride, .ratings-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: white;
+    color: #41B3A3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button:hover, .action-btn:hover, .mybutton:hover, .erstellen:hover, .bewerten:hover, .newride:hover, .ratings-btn:hover {
+    background: #5FB3B3;
+    color: white;
+}
+
+.action-btn.delete {
+    background: #ff4b4b;
+    color: white;
+}
+
+.newride {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.ratings-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.info-container p {
+    font-size: 16px;
+    color: white;
+    margin: 5px 0;
+}
+
+
+.comment-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+@media screen and (max-width: 700px) {
+    .slider p { font-size: 18px; }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links { width: 60%; }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        min-height: 10em;
+        width: 100%;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 8vh;
+        height: 92vh;
+        background-color: #41B3A3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 2;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+
