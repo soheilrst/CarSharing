@@ -27,21 +27,21 @@
 ### 🚗 Fahrt erstellen
 Erstellen Sie eine neue Fahrt mit allen notwendigen Informationen:
 
-![Fahrt erstellen](screenshots/Fahrt_erstellen.png)
+![Fahrt erstellen](carsharer/screenshots/Fahrt_erstellen.png)
 
 ---
 
 ### ℹ️ Fahrt-Details, Reservieren & Bewertung
 Alle Infos zur Fahrt – inkl. Buchungsoption, Bewertung und Löschfunktion:
 
-![Fahrt Infos, reservieren, löschen, bewerten](screenshots/Fahrt_infos_buchen_löschen_bewerten.png)
+![Fahrt Infos, reservieren, löschen, bewerten](carsharer/screenshots/Fahrt_infos_buchen_löschen_bewerten.png)
 
 ---
 
 ### 🔍 Fahrt suchen
 Fahrten nach Kriterien wie Datum, Start und Ziel finden:
 
-![Fahrt suchen](screenshots/Fahrt_suchen.png)
+![Fahrt suchen](carsharer/screenshots/Fahrt_suchen.png)
 
 ---
 
